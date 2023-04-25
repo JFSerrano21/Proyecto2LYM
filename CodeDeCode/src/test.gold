@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class StateGenerator {
+    public static void main(String[] args) {
+        List<String> states = generateStates();
+        for (String state : states) {
+            System.out.println(state);
+        }
+    }
+
+    private static List<String> generateStates() {
+        List<String> states = new ArrayList<>();
+        char[] symbols = {'a', 'b', 'c'};
+
+        for (char s1 : symbols) {
+            for (char s2 : symbols) {
+                for (char s3 : symbols) {
+                    states.add("0" + s1 + s2 + s3);
+                    for (char s4 : symbols) {
+                        for (char s5 : symbols) {
+                            for (char s6 : symbols) {
+                                states.add("0" + s1 + s2 + s3 + "1" + s4 + s5 + s6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (char s1 : symbols) {
+            for (char s2 : symbols) {
+                for (char s3 : symbols) {
+                    states.add("0" + s1 + s2 + s3);
+                }
+            }
+        }
+
+        return states;
+    }
+}

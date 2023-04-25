@@ -1,0 +1,109 @@
+using gold.**
+import java.util.HashSet
+import java.util.Set
+         
+  
+var A
+var B
+
+procedure main(args:String[]) begin
+	var sc:java.util.Scanner(System.$in)
+    
+    A = ('a'‥'z')
+    B = ('0'‥'9')
+	coder:=createCoder()
+   	//deCoder:=createDecoder()
+    
+   	GAutomataFrame.show(coder)
+   	//GAutomataFrame.show(deCoder)
+   
+  	
+	
+  	//Utilities.testCodeDecode(coder,deCoder)
+		
+end
+
+
+
+function createCoder():ITransducer begin	
+	Q:= 
+	Σ:=
+	Γ:=
+	S:= 
+	F:=	 
+
+	return 	GDeterministicTransducer(Q, Σ, Γ, S, F, δ, g, h)
+end
+
+function δ(state,input) begin
+	return λ
+end
+
+function h(state,input) begin
+   return λ
+end
+
+function g(s) begin
+	return λ
+end
+
+
+function getStates() begin
+	    List<String> states = new ArrayList<>();
+        char[] symbols = {'a', 'b', 'c'};
+
+        for (char s1 : symbols) {
+            for (char s2 : symbols) {
+                for (char s3 : symbols) {
+                    states.add("0" + s1 + s2 + s3);
+                    for (char s4 : symbols) {
+                        for (char s5 : symbols) {
+                            for (char s6 : symbols) {
+                                states.add("0" + s1 + s2 + s3 + "1" + s4 + s5 + s6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (char s1 : symbols) {
+            for (char s2 : symbols) {
+                for (char s3 : symbols) {
+                    states.add("0" + s1 + s2 + s3);
+                }
+            }
+        }
+
+        return states;
+end
+
+/* 
+function createDecoder():ITransducer begin
+	Q:= 
+	Σ :=
+	Γ:=
+	S:= 
+	F:=	 
+
+	return 	GDeterministicTransducer(Q, Σ, Γ, S, F, δ1, g1, h1)
+end
+
+	
+	
+function δ1(⟨d,s,pos⟩,input) begin
+	return λ
+end
+
+function h1(state,input) begin 
+	return λ
+end
+
+function h1(⟨d,s,pos⟩,input) begin
+	return λ
+end
+
+
+
+*/
+
